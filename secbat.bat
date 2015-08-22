@@ -27,6 +27,11 @@ echo ------------------------------------------------------------ >> %FOLDER%\ne
 echo Local users on the system >> %FOLDER%\netusers.txt 
 echo ------------------------------------------------------------ >> %FOLDER%\netusers.txt
 net users >> %FOLDER%\netusers.txt
+echo ------------------------------------------------------------ >> %FOLDER%\netusers.txt
+echo Users in local admin group on system >> %FOLDER%\netusers.txt 
+echo ------------------------------------------------------------ >> %FOLDER%\netusers.txt
+net localgroup administrators >> %FOLDER%\netusers.txt
+
 
 echo ------------------------------------------------------------ >> %FOLDER%\netaccounts.txt
 echo Group membership, active sessions, account lock out policy >> %FOLDER%\netaccounts.txt
@@ -39,9 +44,13 @@ echo ------------------------------------------------------------ > %FOLDER%\ipc
 echo Available network interfaces and routing table >> %FOLDER%\ipconfig-all.txt
 echo ------------------------------------------------------------ >> %FOLDER%\ipconfig-all.txt
 ipconfig /all >> %FOLDER%\ipconfig-all.txt
+echo ------------------------------------------------------------ >> %FOLDER%\ipconfig-all.txt
+echo Display DNS Information >> %FOLDER%\ipconfig-all.txt
+echo ------------------------------------------------------------ >> %FOLDER%\ipconfig-all.txt
+ipconfig /displaydns >> %FOLDER%\ipconfig-all.txt
 
 
-echo ------------------------------------------------------------ > %FOLDER%\routeprint.txt
+echo ------------------------------------------------------------ >> %FOLDER%\routeprint.txt
 echo Routing table >> %FOLDER%\routeprint.txt
 echo ------------------------------------------------------------ >> %FOLDER%\routeprint.txt
 route print >> %FOLDER%\routeprint.txt
@@ -62,6 +71,9 @@ echo ------------------------------------------------------------ >> %FOLDER%\ne
 echo Show Established Connections>> %FOLDER%\netstat.txt
 echo ------------------------------------------------------------ >> %FOLDER%\netstat.txt
 netstat -an | find /i "established" >> %FOLDER%\netstat.txt
+echo IP Statistics>> %FOLDER%\netstat.txt
+echo ------------------------------------------------------------ >> %FOLDER%\netstat.txt
+netstat -s  >> %FOLDER%\netstat.txt
 
 
 
@@ -99,11 +111,21 @@ echo ------------------------------------------------------------ >> %FOLDER%\sc
 schtasks /query /fo LIST /v >> %FOLDER%\scheduledtasks.txt
 
 
-echo ------------------------------------------------------------ >> %FOLDER%\processes.txt
-echo Running processes >> %FOLDER%\processes.txt
-echo tasklist /SVC >> %FOLDER%\processes.txt
-echo ------------------------------------------------------------ >> %FOLDER%\processes.txt
-tasklist /SVC >> %FOLDER%\processes.txt
+echo ------------------------------------------------------------ > %FOLDER%\tasklist.txt
+echo Running processes >> %FOLDER%\tasklist.txt
+echo tasklist /SVC >> %FOLDER%\tasklist.txt
+echo ------------------------------------------------------------ >> %FOLDER%\tasklist.txt
+tasklist /SVC >> %FOLDER%\tasklist.txt
+echo ------------------------------------------------------------ >> %FOLDER%\tasklist.txt
+echo Verbose Task information >> %FOLDER%\tasklist.txt
+echo tasklist /v >> %FOLDER%\tasklist.txt
+echo ------------------------------------------------------------ >> %FOLDER%\tasklist.txt
+tasklist /v >> %FOLDER%\tasklist.txt
+echo ------------------------------------------------------------ >> %FOLDER%\tasklist.txt
+echo Shows process that include a given module >> %FOLDER%\tasklist.txt
+echo tasklist /m >> %FOLDER%\tasklist.txt
+echo ------------------------------------------------------------ >> %FOLDER%\tasklist.txt
+tasklist /m >> %FOLDER%\tasklist.txt
 
 
 echo ------------------------------------------------------------ >> %FOLDER%\systemvariables.txt
